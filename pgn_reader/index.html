@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Échiquier - Moteur Maison & PGN</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+        <div class="brand">
+      </div>
+      <div class="controls">
+        <button id="newGame">Nouvelle partie</button>
+        <select id="sideSelect">
+          <option value="white">Vous : Blanc</option>
+          <option value="black">Vous : Noir</option>
+        </select>
+        <label>Bot profondeur
+          <input id="botDepth" type="number" min="0" max="4" value="1" />
+        </label>
+        <button id="botToggle">Bot : OFF</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="board-area">
+      <div id="board" class="board"></div>
+      <canvas id="arrowCanvas"></canvas>
+    </section>
+
+    <aside class="side-panel">
+      <h2>PGN</h2>
+      <textarea id="pgnBox" placeholder="PGN (import / export)"></textarea>
+      <div class="pgn-buttons">
+        <button id="exportPgn">Exporter PGN</button>
+        <button id="importPgn">Importer PGN</button>
+        <button id="clearPgn">Effacer</button>
+      </div>
+
+      <h2>Historique</h2>
+      <ol id="moveList"></ol>
+
+      <h2>Options</h2>
+      <label><input type="checkbox" id="showCoords" checked> Afficher coordonnées</label>
+      <label><input type="checkbox" id="highlightMoves" checked> Mettre en évidence mouvements</label>
+
+      <div style="margin-top:12px;">
+        <button id="undo">Annuler</button>
+        <button id="redo">Rétablir</button>
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    <small>Parfaitement autonome — moteur maison complet — Export/Import PGN (format long : ex. 1. e2e4 e7e5 ...)</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
